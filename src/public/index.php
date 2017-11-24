@@ -35,8 +35,7 @@ $container['db'] = function ($c) {
         PDO::FETCH_ASSOC);
     $db = new NotORM($pdo);
     return $db;
-};
- 
+}; 
 
      $app->get('/api/{nome}', function (Request $request, Response $response) {
          $nome = $request->getAttribute('nome');
@@ -57,7 +56,7 @@ $container['db'] = function ($c) {
         $id = $request->getAttribute('id');
         $updated = null;
         $entrega = $this->db->entregas()->where('id', $id)->fetch();
-        //testar direto
+
         $data = array(
                 "id"=> $id,
                 "numero_pedido" =>$json['numero_pedido'],
